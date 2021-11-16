@@ -3,7 +3,8 @@ const {
   getTotalNumberOfDoctorsGroupedBySpeccialisation
 } = require("./services/specialisations-service");
 const {
-  getTotalHospitalsCountInMunicipalities
+  getTotalHospitalsCountInMunicipalities,
+  getTotalDoctorsCountInMunicipalitiesGroupedByHospitals
 } = require("./services/municipalities-service");
 const {
   getTotalDoctorsCountInHospital
