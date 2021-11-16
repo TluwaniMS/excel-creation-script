@@ -1,4 +1,4 @@
-const hospitals = [
+const Hospitals = [
   {
     hospitalName: "Sekhukhune Private Hospital",
     hospitalKey: "SKKN",
@@ -66,4 +66,4 @@ const hospitals = [
   }
 ];
 
-module.exports = { hospitals };
+module.exports = { Hospitals };

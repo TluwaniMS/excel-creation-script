@@ -1,4 +1,4 @@
-const specialisations = [
+const Specialisations = [
   { specialisationName: "Pediatrician", specialisationKey: "PDTN" },
   { specialisationName: "Dematologist", specialisationKey: "DMTG" },
   { specialisationName: "Cardiologist", specialisationKey: "CDGT" },
@@ -8,4 +8,4 @@ const specialisations = [
   { specialisationName: "Radiologist", specialisationKey: "RDLG" }
 ];
 
-module.exports = { specialisations };
+module.exports = { Specialisations };
