@@ -1,4 +1,4 @@
-const { getAllFormattedSampleDoctors } = require("./services/doctors-service");
+const { getAllFormattedSampleDoctors } = require("./doctors-service");
 const {
   getTotalNumberOfDoctorsGroupedBySpeccialisation
 } = require("./specialisations-service");
@@ -17,4 +17,36 @@ function getDataToBeScriptedAndTotalRowsRequired() {
     getTotalDoctorsCountInMunicipalitiesGroupedByHospitals();
   const totalDoctorsCountGroupedBySpecialisation =
     getTotalNumberOfDoctorsGroupedBySpeccialisation();
+
+  const dataArray = [
+    doctors,
+    totalDoctorsCountInHospital,
+    totalHospitalCountInMunicipalities,
+    totalDoctorsCountInMunicipalitiesGroupedByHospital,
+    totalDoctorsCountGroupedBySpecialisation
+  ];
+
+  const arrayWithObjectsContainingDataAndMetaData =
+    formatDataToBeScripted(dataArray);
+
+  return arrayWithObjectsContainingDataAndMetaData;
 }
+
+function formatDataToBeScripted(dataArray) {
+  const objectWithDataMeta = [];
+
+  dataArray.forEach((data) => {
+    const dataLength = data.length;
+
+    const dataObject = {
+      rows: dataLength,
+      dataSet: data
+    };
+
+    objectWithDataMeta.push(dataObject);
+  });
+
+  return objectWithDataMeta;
+}
+
+module.exports = { getDataToBeScriptedAndTotalRowsRequired };
