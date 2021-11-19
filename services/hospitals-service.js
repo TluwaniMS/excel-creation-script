@@ -3,7 +3,10 @@ const { Hospitals } = require("../sample-data/hospitals");
 const DataTitles = require("../enumerators/data-titles");
 
 function getTotalDoctorsCountInHospital() {
-  const formattedHospitals = [];
+  const formattedHospitals = {
+    title: DataTitles.DoctorsCountInHospitals,
+    data: []
+  };
 
   Hospitals.forEach((hospital) => {
     const doctorsLinkedToHospital = Doctors.filter(
@@ -13,12 +16,7 @@ function getTotalDoctorsCountInHospital() {
 
     hospital.total = totalDoctors;
 
-    const preparedData = {
-      title: DataTitles.DoctorsCountInHospitals,
-      data: hospital
-    };
-
-    formattedHospitals.push(preparedData);
+    formattedHospitals.data.push(hospital);
   });
 
   return formattedHospitals;

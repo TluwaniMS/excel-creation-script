@@ -3,7 +3,10 @@ const { Specialisations } = require("../sample-data/specialisations");
 const DataTitles = require("../enumerators/data-titles");
 
 function getTotalNumberOfDoctorsGroupedBySpecialisation() {
-  const formattedSpecialisations = [];
+  const formattedSpecialisations = {
+    title: DataTitles.DoctorsCountGroupedBySpecialisation,
+    data: []
+  };
   Specialisations.forEach((specialisation) => {
     const doctorsLinkedToSpecialisation = Doctors.filter(
       (doctor) => doctor.specialty === specialisation.specialisationKey
@@ -13,12 +16,7 @@ function getTotalNumberOfDoctorsGroupedBySpecialisation() {
 
     specialisation.total = totalDoctorsLinkedToSpecialisation;
 
-    const preparedData = {
-      title: DataTitles.DoctorsCountGroupedBySpecialisation,
-      data: specialisation
-    };
-
-    formattedSpecialisations.push(preparedData);
+    formattedSpecialisations.data.push(specialisation);
   });
 
   return formattedSpecialisations;

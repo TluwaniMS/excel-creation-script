@@ -4,7 +4,10 @@ const { Doctors } = require("../sample-data/doctors");
 const DataTitles = require("../enumerators/data-titles");
 
 function getTotalHospitalsCountInMunicipalities() {
-  const formattedMunicipalities = [];
+  const formattedMunicipalities = {
+    title: DataTitles.HospitalsCountInMunicipalities,
+    data: []
+  };
   Municipalities.forEach((municipality) => {
     const hospitalsLinkedToMunicipality = Hospitals.filter(
       (hospital) => hospital.municipality === municipality.municipalityKey
@@ -13,19 +16,17 @@ function getTotalHospitalsCountInMunicipalities() {
 
     municipality.total = totalHospitalsInMunicipality;
 
-    const preparedData = {
-      title: DataTitles.HospitalsCountInMunicipalities,
-      data: municipality
-    };
-
-    formattedMunicipalities.push(preparedData);
+    formattedMunicipalities.data.push(municipality);
   });
 
   return formattedMunicipalities;
 }
 
 function getTotalDoctorsCountInMunicipalitiesGroupedByHospitals() {
-  const formattedMunicipalitiesWithDoctorsCountGroupedByHospitals = [];
+  const formattedMunicipalitiesWithDoctorsCountGroupedByHospitals = {
+    title: DataTitles.DoctorsCountInMunicipalitiesGroupedByHospitals,
+    data: []
+  };
 
   Hospitals.forEach((hospital) => {
     const municipalityLinkedToHospital = Municipalities.filter(
@@ -41,13 +42,8 @@ function getTotalDoctorsCountInMunicipalitiesGroupedByHospitals() {
     hospital.municipality = municipalityName;
     hospital.total = totalDoctors;
 
-    const preparedData = {
-      title: DataTitles.DoctorsCountInMunicipalitiesGroupedByHospitals,
-      data: hospital
-    };
-
-    formattedMunicipalitiesWithDoctorsCountGroupedByHospitals.push(
-      preparedData
+    formattedMunicipalitiesWithDoctorsCountGroupedByHospitals.data.push(
+      hospital
     );
   });
 

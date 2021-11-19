@@ -35,12 +35,12 @@ function getDataToBeScriptedAndTotalRowsRequired() {
 function formatDataToBeScripted(dataArray) {
   const objectWithDataMeta = [];
 
-  dataArray.forEach((data) => {
-    const dataLength = data.length;
+  dataArray.forEach((content) => {
+    const dataLength = content.data.length;
 
     const dataObject = {
       rows: dataLength,
-      dataSet: data
+      dataSet: content
     };
 
     objectWithDataMeta.push(dataObject);

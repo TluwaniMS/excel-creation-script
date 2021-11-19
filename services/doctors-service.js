@@ -4,7 +4,7 @@ const { Specialisations } = require("../sample-data/specialisations");
 const DataTitles = require("../enumerators/data-titles");
 
 function getAllFormattedSampleDoctors() {
-  const formattedDoctors = [];
+  const formattedDoctors = { title: DataTitles.Doctors, data: [] };
 
   Doctors.forEach((doctor) => {
     const hospitalLinkedToDoctor = Hospitals.filter(
@@ -20,12 +20,7 @@ function getAllFormattedSampleDoctors() {
     doctor.specialty = specialtyName;
     doctor.hospital = hospitalName;
 
-    const preparedData = {
-      title: DataTitles.Doctors,
-      data: doctor
-    };
-
-    formattedDoctors.push(preparedData);
+    formattedDoctors.data.push(doctor);
   });
 
   return formattedDoctors;
