@@ -1,5 +1,6 @@
 const { Doctors } = require("../sample-data/doctors");
 const { Specialisations } = require("../sample-data/specialisations");
+const DataTitles = require("../enumerators/data-titles");
 
 function getTotalNumberOfDoctorsGroupedBySpecialisation() {
   const formattedSpecialisations = [];

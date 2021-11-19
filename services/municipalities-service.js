@@ -1,6 +1,7 @@
 const { Hospitals } = require("../sample-data/hospitals");
 const { Municipalities } = require("../sample-data/municipalities");
 const { Doctors } = require("../sample-data/doctors");
+const DataTitles = require("../enumerators/data-titles");
 
 function getTotalHospitalsCountInMunicipalities() {
   const formattedMunicipalities = [];
