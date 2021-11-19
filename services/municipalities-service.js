@@ -12,7 +12,13 @@ function getTotalHospitalsCountInMunicipalities() {
     const totalHospitalsInMunicipality = hospitalsLinkedToMunicipality.length;
 
     municipality.total = totalHospitalsInMunicipality;
-    formattedMunicipalities.push(municipality);
+
+    const preparedData = {
+      title: DataTitles.HospitalsCountInMunicipalities,
+      data: municipality
+    };
+
+    formattedMunicipalities.push(preparedData);
   });
 
   return formattedMunicipalities;
@@ -35,7 +41,14 @@ function getTotalDoctorsCountInMunicipalitiesGroupedByHospitals() {
     hospital.municipality = municipalityName;
     hospital.total = totalDoctors;
 
-    formattedMunicipalitiesWithDoctorsCountGroupedByHospitals.push(hospital);
+    const preparedData = {
+      title: DataTitles.DoctorsCountInMunicipalitiesGroupedByHospitals,
+      data: hospital
+    };
+
+    formattedMunicipalitiesWithDoctorsCountGroupedByHospitals.push(
+      preparedData
+    );
   });
 
   return formattedMunicipalitiesWithDoctorsCountGroupedByHospitals;

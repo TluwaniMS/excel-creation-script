@@ -12,7 +12,13 @@ function getTotalDoctorsCountInHospital() {
     const totalDoctors = doctorsLinkedToHospital.length;
 
     hospital.total = totalDoctors;
-    formattedHospitals.push(hospital);
+
+    const preparedData = {
+      title: DataTitles.DoctorsCountInHospitals,
+      data: hospital
+    };
+
+    formattedHospitals.push(preparedData);
   });
 
   return formattedHospitals;

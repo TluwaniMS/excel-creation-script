@@ -12,7 +12,13 @@ function getTotalNumberOfDoctorsGroupedBySpecialisation() {
       doctorsLinkedToSpecialisation.length;
 
     specialisation.total = totalDoctorsLinkedToSpecialisation;
-    formattedSpecialisations.push(specialisation);
+
+    const preparedData = {
+      title: DataTitles.DoctorsCountGroupedBySpecialisation,
+      data: specialisation
+    };
+
+    formattedSpecialisations.push(preparedData);
   });
 
   return formattedSpecialisations;
