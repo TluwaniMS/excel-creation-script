@@ -1,7 +1,7 @@
 const { Doctors } = require("../sample-data/doctors");
 const { Specialisations } = require("../sample-data/specialisations");
 
-function getTotalNumberOfDoctorsGroupedBySpeccialisation() {
+function getTotalNumberOfDoctorsGroupedBySpecialisation() {
   const formattedSpecialisations = [];
   Specialisations.forEach((specialisation) => {
     const doctorsLinkedToSpecialisation = Doctors.filter(
@@ -17,4 +17,4 @@ function getTotalNumberOfDoctorsGroupedBySpeccialisation() {
   return formattedSpecialisations;
 }
 
-module.exports = { getTotalNumberOfDoctorsGroupedBySpeccialisation };
+module.exports = { getTotalNumberOfDoctorsGroupedBySpecialisation };

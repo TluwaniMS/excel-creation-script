@@ -1,6 +1,6 @@
 const { getAllFormattedSampleDoctors } = require("./doctors-service");
 const {
-  getTotalNumberOfDoctorsGroupedBySpeccialisation
+  getTotalNumberOfDoctorsGroupedBySpecialisation
 } = require("./specialisations-service");
 const {
   getTotalHospitalsCountInMunicipalities,
@@ -16,7 +16,7 @@ function getDataToBeScriptedAndTotalRowsRequired() {
   const totalDoctorsCountInMunicipalitiesGroupedByHospital =
     getTotalDoctorsCountInMunicipalitiesGroupedByHospitals();
   const totalDoctorsCountGroupedBySpecialisation =
-    getTotalNumberOfDoctorsGroupedBySpeccialisation();
+    getTotalNumberOfDoctorsGroupedBySpecialisation();
 
   const dataArray = [
     doctors,
