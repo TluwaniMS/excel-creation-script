@@ -1,7 +1,9 @@
 const excel4node = require("excel4node");
 const Enumerators = require("../enumerators/data-titles");
 const {
-  getDataToBeScriptedAndTotalRowsRequired
+  getDataToBeScriptedAndTotalRowsRequired,
+  getTotalNumberOfRowsPreceedingDataInput,
+  calculateToTalRowsOccupied
 } = require("../services/main-excel-scripting-service");
 
 function mainLogicForConvertingDataToExcel() {
@@ -10,11 +12,17 @@ function mainLogicForConvertingDataToExcel() {
 
   const dataToBeScripted = getDataToBeScriptedAndTotalRowsRequired();
 
-  createDoctorsDataTable(workSheet,dataToBeScripted)
-  createHospitalsDataTableWithTotalDoctorsCount(workSheet,dataToBeScripted)
-  createMunicipalitiesDataTableWithHospitalsCount(workSheet,dataToBeScripted)
-  createMunicipalitiesDataTableWithHospitalsAndLinkedDoctorsCount(workSheet,dataToBeScripted)
-  createSpecialisationsDataTableWithTotalDoctorsCountGroupedBySpecialisation(workSheet,dataToBeScripted)
+  createDoctorsDataTable(workSheet, dataToBeScripted);
+  createHospitalsDataTableWithTotalDoctorsCount(workSheet, dataToBeScripted);
+  createMunicipalitiesDataTableWithHospitalsCount(workSheet, dataToBeScripted);
+  createMunicipalitiesDataTableWithHospitalsAndLinkedDoctorsCount(
+    workSheet,
+    dataToBeScripted
+  );
+  createSpecialisationsDataTableWithTotalDoctorsCountGroupedBySpecialisation(
+    workSheet,
+    dataToBeScripted
+  );
 }
 
 function createDoctorsDataTable(workSheet, data) {
@@ -22,7 +30,7 @@ function createDoctorsDataTable(workSheet, data) {
     (content) => content.dataSet.title === Enumerators.Doctors
   );
 
-  console.log(doctorsData)
+  console.log(doctorsData);
 }
 
 function createHospitalsDataTableWithTotalDoctorsCount(workSheet, data) {
@@ -30,7 +38,7 @@ function createHospitalsDataTableWithTotalDoctorsCount(workSheet, data) {
     (content) => content.dataSet.title === Enumerators.DoctorsCountInHospitals
   );
 
-  console.log(hospitalsData)
+  console.log(hospitalsData);
 }
 
 function createMunicipalitiesDataTableWithHospitalsCount(workSheet, data) {
@@ -39,7 +47,7 @@ function createMunicipalitiesDataTableWithHospitalsCount(workSheet, data) {
       content.dataSet.title === Enumerators.HospitalsCountInMunicipalities
   );
 
-  console.log(municipalitiesData)
+  console.log(municipalitiesData);
 }
 
 function createMunicipalitiesDataTableWithHospitalsAndLinkedDoctorsCount(
@@ -52,7 +60,7 @@ function createMunicipalitiesDataTableWithHospitalsAndLinkedDoctorsCount(
       Enumerators.DoctorsCountInMunicipalitiesGroupedByHospitals
   );
 
-  console.log(municipalitiesData)
+  console.log(municipalitiesData);
 }
 
 function createSpecialisationsDataTableWithTotalDoctorsCountGroupedBySpecialisation(
@@ -64,7 +72,7 @@ function createSpecialisationsDataTableWithTotalDoctorsCountGroupedBySpecialisat
       content.dataSet.title === Enumerators.DoctorsCountGroupedBySpecialisation
   );
 
-  console.log(specialitiesData)
+  console.log(specialitiesData);
 }
 
 module.exports = { mainLogicForConvertingDataToExcel };
