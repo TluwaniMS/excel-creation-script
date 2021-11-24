@@ -7,6 +7,7 @@ const {
   getTotalDoctorsCountInMunicipalitiesGroupedByHospitals
 } = require("./municipalities-service");
 const { getTotalDoctorsCountInHospital } = require("./hospitals-service");
+const standardDataSeperatorValue = require("../enumerators/standard-data-seperator");
 
 function getDataToBeScriptedAndTotalRowsRequired() {
   const doctors = getAllFormattedSampleDoctors();
@@ -49,4 +50,31 @@ function formatDataToBeScripted(dataArray) {
   return objectWithDataMeta;
 }
 
-module.exports = { getDataToBeScriptedAndTotalRowsRequired };
+function getTotalNumberOfRowsPreceedingDataInput(
+  rows,
+  positionOfDataInputOnTheSheet
+) {
+  const spacingValue =
+    standardDataSeperatorValue.standardSeperator *
+    (positionOfDataInputOnTheSheet - 1);
+
+  const totalHeaderColumns = positionOfDataInputOnTheSheet - 1;
+
+  const totalPrecedingRows = spacingValue + totalHeaderColumns + rows;
+
+  return totalPrecedingRows;
+}
+
+function calculateToTalRowsOccupied(rowsPreceeding) {
+  const preceedingRowsOccupied = rowsPreceeding.reduce(
+    (total, amount) => total + amount
+  );
+
+  return preceedingRowsOccupied;
+}
+
+module.exports = {
+  getDataToBeScriptedAndTotalRowsRequired,
+  calculateToTalRowsOccupied,
+  getTotalNumberOfRowsPreceedingDataInput
+};
