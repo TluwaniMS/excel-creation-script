@@ -1,5 +1,6 @@
 const excel4node = require("excel4node");
 const Enumerators = require("../enumerators/data-titles");
+const DataInputPreceedingTitles = require("../enumerators/data-linked-to-row-level-input");
 const {
   getDataToBeScriptedAndTotalRowsRequired,
   getTotalNumberOfRowsPreceedingDataInput,
