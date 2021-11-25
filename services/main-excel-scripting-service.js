@@ -54,7 +54,18 @@ function getTotalNumberOfRowsPreceedingDataInput(rows, positionOfDataInputOnTheS
   return totalPrecedingRows;
 }
 
+function extractColumnNames(data) {
+  const duplicateObjectKeys = [];
+
+  data.forEach((element) => duplicateObjectKeys.push(...Object.keys(element)));
+
+  const columnNames = [...new Set(duplicateObjectKeys)];
+
+  return columnNames;
+}
+
 module.exports = {
   getDataToBeScriptedAndTotalRowsRequired,
-  getTotalNumberOfRowsPreceedingDataInput
+  getTotalNumberOfRowsPreceedingDataInput,
+  extractColumnNames
 };
