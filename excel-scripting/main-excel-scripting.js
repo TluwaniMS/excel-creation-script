@@ -3,8 +3,7 @@ const Enumerators = require("../enumerators/data-titles");
 const DataInputPreceedingTitles = require("../enumerators/data-linked-to-row-level-input");
 const {
   getDataToBeScriptedAndTotalRowsRequired,
-  getTotalNumberOfRowsPreceedingDataInput,
-  calculateToTalRowsOccupied
+  getTotalNumberOfRowsPreceedingDataInput
 } = require("../services/main-excel-scripting-service");
 
 function mainLogicForConvertingDataToExcel() {

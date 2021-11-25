@@ -1,7 +1,5 @@
 const { getAllFormattedSampleDoctors } = require("./doctors-service");
-const {
-  getTotalNumberOfDoctorsGroupedBySpecialisation
-} = require("./specialisations-service");
+const { getTotalNumberOfDoctorsGroupedBySpecialisation } = require("./specialisations-service");
 const {
   getTotalHospitalsCountInMunicipalities,
   getTotalDoctorsCountInMunicipalitiesGroupedByHospitals
@@ -12,12 +10,9 @@ const standardDataSeperatorValue = require("../enumerators/standard-data-seperat
 function getDataToBeScriptedAndTotalRowsRequired() {
   const doctors = getAllFormattedSampleDoctors();
   const totalDoctorsCountInHospital = getTotalDoctorsCountInHospital();
-  const totalHospitalCountInMunicipalities =
-    getTotalHospitalsCountInMunicipalities();
-  const totalDoctorsCountInMunicipalitiesGroupedByHospital =
-    getTotalDoctorsCountInMunicipalitiesGroupedByHospitals();
-  const totalDoctorsCountGroupedBySpecialisation =
-    getTotalNumberOfDoctorsGroupedBySpecialisation();
+  const totalHospitalCountInMunicipalities = getTotalHospitalsCountInMunicipalities();
+  const totalDoctorsCountInMunicipalitiesGroupedByHospital = getTotalDoctorsCountInMunicipalitiesGroupedByHospitals();
+  const totalDoctorsCountGroupedBySpecialisation = getTotalNumberOfDoctorsGroupedBySpecialisation();
 
   const dataArray = [
     doctors,
@@ -27,8 +22,7 @@ function getDataToBeScriptedAndTotalRowsRequired() {
     totalDoctorsCountGroupedBySpecialisation
   ];
 
-  const arrayWithObjectsContainingDataAndMetaData =
-    formatDataToBeScripted(dataArray);
+  const arrayWithObjectsContainingDataAndMetaData = formatDataToBeScripted(dataArray);
 
   return arrayWithObjectsContainingDataAndMetaData;
 }
@@ -50,13 +44,8 @@ function formatDataToBeScripted(dataArray) {
   return objectWithDataMeta;
 }
 
-function getTotalNumberOfRowsPreceedingDataInput(
-  rows,
-  positionOfDataInputOnTheSheet
-) {
-  const spacingValue =
-    standardDataSeperatorValue.standardSeperator *
-    (positionOfDataInputOnTheSheet - 1);
+function getTotalNumberOfRowsPreceedingDataInput(rows, positionOfDataInputOnTheSheet) {
+  const spacingValue = standardDataSeperatorValue.standardSeperator * (positionOfDataInputOnTheSheet - 1);
 
   const totalHeaderColumns = positionOfDataInputOnTheSheet - 1;
 
@@ -65,16 +54,7 @@ function getTotalNumberOfRowsPreceedingDataInput(
   return totalPrecedingRows;
 }
 
-function calculateToTalRowsOccupied(rowsPreceeding) {
-  const preceedingRowsOccupied = rowsPreceeding.reduce(
-    (total, amount) => total + amount
-  );
-
-  return preceedingRowsOccupied;
-}
-
 module.exports = {
   getDataToBeScriptedAndTotalRowsRequired,
-  calculateToTalRowsOccupied,
   getTotalNumberOfRowsPreceedingDataInput
 };
