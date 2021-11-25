@@ -32,6 +32,8 @@ function createHospitalsDataTableWithTotalDoctorsCount(workSheet, data) {
     return total + amount.rows;
   }, 0);
 
+  const startingRowForDataInput = getTotalNumberOfRowsPreceedingDataInput(rowsOfPreceedingData, 2);
+
   const hospitalsData = data.filter((content) => content.dataSet.title === Enumerators.DoctorsCountInHospitals);
 }
 
@@ -43,6 +45,8 @@ function createMunicipalitiesDataTableWithHospitalsCount(workSheet, data) {
   const rowsOfPreceedingData = preceedingData.reduce((total, amount) => {
     return total + amount.rows;
   }, 0);
+
+  const startingRowForDataInput = getTotalNumberOfRowsPreceedingDataInput(rowsOfPreceedingData, 3);
 
   const municipalitiesData = data.filter(
     (content) => content.dataSet.title === Enumerators.HospitalsCountInMunicipalities
@@ -58,6 +62,8 @@ function createMunicipalitiesDataTableWithHospitalsAndLinkedDoctorsCount(workShe
     return total + amount.rows;
   }, 0);
 
+  const startingRowForDataInput = getTotalNumberOfRowsPreceedingDataInput(rowsOfPreceedingData, 4);
+
   const municipalitiesData = data.filter(
     (content) => content.dataSet.title === Enumerators.DoctorsCountInMunicipalitiesGroupedByHospitals
   );
@@ -71,6 +77,8 @@ function createSpecialisationsDataTableWithTotalDoctorsCountGroupedBySpecialisat
   const rowsOfPreceedingData = preceedingData.reduce((total, amount) => {
     return total + amount.rows;
   }, 0);
+
+  const startingRowForDataInput = getTotalNumberOfRowsPreceedingDataInput(rowsOfPreceedingData, 5);
 
   const specialitiesData = data.filter(
     (content) => content.dataSet.title === Enumerators.DoctorsCountGroupedBySpecialisation
