@@ -1,9 +1,9 @@
 const Municipalities = [
-  { municipalityName: "Blouberg Municipality", municipalityKey: "BLBG" },
-  { municipalityName: "Capricorn Municipality", municipalityKey: "CPRN" },
-  { municipalityName: "Ekhuruleni Municipality", municipalityKey: "EKRN" },
-  { municipalityName: "Waterval Municipality", municipalityKey: "WTRV" },
-  { municipalityName: "Luonde Municipality", municipalityKey: "LNDE" }
+  { municipalityKey: "BLBG", municipalityName: "Blouberg Municipality" },
+  { municipalityKey: "CPRN", municipalityName: "Capricorn Municipality" },
+  { municipalityKey: "EKRN", municipalityName: "Ekhuruleni Municipality" },
+  { municipalityKey: "WTRV", municipalityName: "Waterval Municipality" },
+  { municipalityKey: "LNDE", municipalityName: "Luonde Municipality" }
 ];
 
 module.exports = { Municipalities };
