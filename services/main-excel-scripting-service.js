@@ -75,6 +75,13 @@ function insertDoctorsData(workSheet, startingRow, data) {
   data.forEach((info, index) => {
     const rowIncrementer = index + 1;
     const currentRow = startingRow + rowIncrementer;
+
+    workSheet.cell(currentRow, 1).string(info.firstName);
+    workSheet.cell(currentRow, 2).string(info.lastName);
+    workSheet.cell(currentRow, 3).string(info.gender);
+    workSheet.cell(currentRow, 4).string(info.email);
+    workSheet.cell(currentRow, 5).string(info.hospital);
+    workSheet.cell(currentRow, 6).string(info.specialty);
   });
 }
 
