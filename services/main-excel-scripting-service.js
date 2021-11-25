@@ -103,8 +103,8 @@ function insertMunicipalitiesWithHospitalCountData(workSheet, startingRow, data)
     const currentRow = startingRow + rowIncrementer;
 
     workSheet.cell(currentRow, 1).string(info.municipalityKey);
-    workSheet.cell(currentRow, 1).string(info.municipalityName);
-    workSheet.cell(currentRow, 1).string(info.total);
+    workSheet.cell(currentRow, 2).string(info.municipalityName);
+    workSheet.cell(currentRow, 3).string(info.total);
   });
 }
 
@@ -112,6 +112,7 @@ function insertMunicipalitiesWithHospitalsLinkedToDoctorsCountData(workSheet, st
   data.forEach((info, index) => {
     const rowIncrementer = index + 1;
     const currentRow = startingRow + rowIncrementer;
+
   });
 }
 
@@ -119,6 +120,10 @@ function insertSpecialisationsCountData(workSheet, startingRow, data) {
   data.forEach((info, index) => {
     const rowIncrementer = index + 1;
     const currentRow = startingRow + rowIncrementer;
+
+    workSheet.cell(currentRow, 1).string(info.specialisationKey);
+    workSheet.cell(currentRow, 2).string(info.specialisationName);
+    workSheet.cell(currentRow, 3).string(info.total);
   });
 }
 

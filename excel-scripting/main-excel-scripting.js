@@ -85,6 +85,7 @@ function createMunicipalitiesDataTableWithHospitalsAndLinkedDoctorsCount(workShe
 
   const columnNames = extractColumnNames(municipalitiesData[0].dataSet.data);
 
+ 
   // createColumnHeaders(workSheet, columnNames, startingRowForDataInput);
 }
 
