@@ -20,14 +20,14 @@ function mainLogicForConvertingDataToExcel() {
   createMunicipalitiesDataTableWithHospitalsAndLinkedDoctorsCount(workSheet, dataToBeScripted);
   createSpecialisationsDataTableWithTotalDoctorsCountGroupedBySpecialisation(workSheet, dataToBeScripted);
 
-  workBook.write("Doctors-directory-stats.xlsx");
+  // workBook.write("Doctors-directory-stats.xlsx");
 }
 
 function createDoctorsDataTable(workSheet, data) {
   const doctorsData = data.filter((content) => content.dataSet.title === Enumerators.Doctors);
 
   const columnNames = extractColumnNames(doctorsData[0].dataSet.data);
-  createColumnHeaders(workSheet, columnNames, 1);
+  // createColumnHeaders(workSheet, columnNames, 1);
 }
 
 function createHospitalsDataTableWithTotalDoctorsCount(workSheet, data) {
@@ -45,7 +45,9 @@ function createHospitalsDataTableWithTotalDoctorsCount(workSheet, data) {
 
   const columnNames = extractColumnNames(hospitalsData[0].dataSet.data);
 
-  createColumnHeaders(workSheet, columnNames, startingRowForDataInput);
+  console.log(hospitalsData[0].dataSet.data)
+  console.log(columnNames)
+  // createColumnHeaders(workSheet, columnNames, startingRowForDataInput);
 }
 
 function createMunicipalitiesDataTableWithHospitalsCount(workSheet, data) {
@@ -65,7 +67,7 @@ function createMunicipalitiesDataTableWithHospitalsCount(workSheet, data) {
 
   const columnNames = extractColumnNames(municipalitiesData[0].dataSet.data);
 
-  createColumnHeaders(workSheet, columnNames, startingRowForDataInput);
+  // createColumnHeaders(workSheet, columnNames, startingRowForDataInput);
 }
 
 function createMunicipalitiesDataTableWithHospitalsAndLinkedDoctorsCount(workSheet, data) {
@@ -85,7 +87,7 @@ function createMunicipalitiesDataTableWithHospitalsAndLinkedDoctorsCount(workShe
 
   const columnNames = extractColumnNames(municipalitiesData[0].dataSet.data);
 
-  createColumnHeaders(workSheet, columnNames, startingRowForDataInput);
+  // createColumnHeaders(workSheet, columnNames, startingRowForDataInput);
 }
 
 function createSpecialisationsDataTableWithTotalDoctorsCountGroupedBySpecialisation(workSheet, data) {
@@ -105,7 +107,7 @@ function createSpecialisationsDataTableWithTotalDoctorsCountGroupedBySpecialisat
 
   const columnNames = extractColumnNames(specialitiesData[0].dataSet.data);
 
-  createColumnHeaders(workSheet, columnNames, startingRowForDataInput);
+  // createColumnHeaders(workSheet, columnNames, startingRowForDataInput);
 }
 
 module.exports = { mainLogicForConvertingDataToExcel };
