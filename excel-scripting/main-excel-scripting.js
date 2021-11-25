@@ -22,39 +22,46 @@ function mainLogicForConvertingDataToExcel() {
 
 function createDoctorsDataTable(workSheet, data) {
   const doctorsData = data.filter((content) => content.dataSet.title === Enumerators.Doctors);
-
-  console.log(doctorsData);
 }
 
 function createHospitalsDataTableWithTotalDoctorsCount(workSheet, data) {
   const preceedingData = data.filter((content) =>
     DataInputPreceedingTitles.SecondDataInputPreceedingTitles.includes(content.dataSet.title)
   );
-  const hospitalsData = data.filter((content) => content.dataSet.title === Enumerators.DoctorsCountInHospitals);
 
-  console.log(hospitalsData);
+  const rowsOfPreceedingData = preceedingData.reduce((total, amount) => {
+    return total + amount.rows;
+  }, 0);
+
+  const hospitalsData = data.filter((content) => content.dataSet.title === Enumerators.DoctorsCountInHospitals);
 }
 
 function createMunicipalitiesDataTableWithHospitalsCount(workSheet, data) {
   const preceedingData = data.filter((content) =>
     DataInputPreceedingTitles.ThirdDataInputPreceedingTitles.includes(content.dataSet.title)
   );
+
+  const rowsOfPreceedingData = preceedingData.reduce((total, amount) => {
+    return total + amount.rows;
+  }, 0);
+
   const municipalitiesData = data.filter(
     (content) => content.dataSet.title === Enumerators.HospitalsCountInMunicipalities
   );
-
-  console.log(municipalitiesData);
 }
 
 function createMunicipalitiesDataTableWithHospitalsAndLinkedDoctorsCount(workSheet, data) {
   const preceedingData = data.filter((content) =>
     DataInputPreceedingTitles.FourthDataInputPreceedingTitles.includes(content.dataSet.title)
   );
+
+  const rowsOfPreceedingData = preceedingData.reduce((total, amount) => {
+    return total + amount.rows;
+  }, 0);
+
   const municipalitiesData = data.filter(
     (content) => content.dataSet.title === Enumerators.DoctorsCountInMunicipalitiesGroupedByHospitals
   );
-
-  console.log(municipalitiesData);
 }
 
 function createSpecialisationsDataTableWithTotalDoctorsCountGroupedBySpecialisation(workSheet, data) {
@@ -62,11 +69,13 @@ function createSpecialisationsDataTableWithTotalDoctorsCountGroupedBySpecialisat
     DataInputPreceedingTitles.FifthDataInputPreceedingTitles.includes(content.dataSet.title)
   );
 
+  const rowsOfPreceedingData = preceedingData.reduce((total, amount) => {
+    return total + amount.rows;
+  }, 0);
+
   const specialitiesData = data.filter(
     (content) => content.dataSet.title === Enumerators.DoctorsCountGroupedBySpecialisation
   );
-
-  console.log(specialitiesData);
 }
 
 module.exports = { mainLogicForConvertingDataToExcel };
