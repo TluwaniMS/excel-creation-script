@@ -71,9 +71,44 @@ function createColumnHeaders(workSheet, columnNames, startingRow) {
   });
 }
 
+function insertDoctorsData(workSheet, startingRow, data) {
+  data.forEach((count, index) => {
+    const rowIncrementer = index + 1;
+  });
+}
+
+function insertHospitalsData(workSheet, startingRow, data) {
+  data.forEach((count, index) => {
+    const rowIncrementer = index + 1;
+  });
+}
+
+function insertMunicipalitiesWithHospitalCountData(workSheet, startingRow, data) {
+  data.forEach((count, index) => {
+    const rowIncrementer = index + 1;
+  });
+}
+
+function insertMunicipalitiesWithHospitalsLinkedToDoctorsCountData(workSheet, startingRow, data) {
+  data.forEach((count, index) => {
+    const rowIncrementer = index + 1;
+  });
+}
+
+function insertSpecialisationsCountData(workSheet, startingRow, data) {
+  data.forEach((count, index) => {
+    const rowIncrementer = index + 1;
+  });
+}
+
 module.exports = {
   getDataToBeScriptedAndTotalRowsRequired,
   getTotalNumberOfRowsPreceedingDataInput,
   extractColumnNames,
-  createColumnHeaders
+  createColumnHeaders,
+  insertDoctorsData,
+  insertHospitalsData,
+  insertMunicipalitiesWithHospitalCountData,
+  insertMunicipalitiesWithHospitalsLinkedToDoctorsCountData,
+  insertSpecialisationsCountData
 };
