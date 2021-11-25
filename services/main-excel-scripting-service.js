@@ -72,32 +72,37 @@ function createColumnHeaders(workSheet, columnNames, startingRow) {
 }
 
 function insertDoctorsData(workSheet, startingRow, data) {
-  data.forEach((count, index) => {
+  data.forEach((info, index) => {
     const rowIncrementer = index + 1;
+    const currentRow = startingRow + rowIncrementer;
   });
 }
 
 function insertHospitalsData(workSheet, startingRow, data) {
-  data.forEach((count, index) => {
+  data.forEach((info, index) => {
     const rowIncrementer = index + 1;
+    const currentRow = startingRow + rowIncrementer;
   });
 }
 
 function insertMunicipalitiesWithHospitalCountData(workSheet, startingRow, data) {
-  data.forEach((count, index) => {
+  data.forEach((info, index) => {
     const rowIncrementer = index + 1;
+    const currentRow = startingRow + rowIncrementer;
   });
 }
 
 function insertMunicipalitiesWithHospitalsLinkedToDoctorsCountData(workSheet, startingRow, data) {
-  data.forEach((count, index) => {
+  data.forEach((info, index) => {
     const rowIncrementer = index + 1;
+    const currentRow = startingRow + rowIncrementer;
   });
 }
 
 function insertSpecialisationsCountData(workSheet, startingRow, data) {
-  data.forEach((count, index) => {
+  data.forEach((info, index) => {
     const rowIncrementer = index + 1;
+    const currentRow = startingRow + rowIncrementer;
   });
 }
 
