@@ -64,8 +64,16 @@ function extractColumnNames(data) {
   return columnNames;
 }
 
+function createColumnHeaders(workSheet, columnNames, startingRow) {
+  columnNames.forEach((name, index) => {
+    const column = index + 1;
+    workSheet.cell(startingRow, column).string(name);
+  });
+}
+
 module.exports = {
   getDataToBeScriptedAndTotalRowsRequired,
   getTotalNumberOfRowsPreceedingDataInput,
-  extractColumnNames
+  extractColumnNames,
+  createColumnHeaders
 };
