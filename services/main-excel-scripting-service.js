@@ -93,7 +93,7 @@ function insertHospitalsData(workSheet, startingRow, data) {
     workSheet.cell(currentRow, 1).string(info.hospitalKey);
     workSheet.cell(currentRow, 2).string(info.hospitalName);
     workSheet.cell(currentRow, 3).string(info.municipality);
-    workSheet.cell(currentRow, 4).string(info.total);
+    workSheet.cell(currentRow, 4).number(info.total);
   });
 }
 
@@ -101,6 +101,10 @@ function insertMunicipalitiesWithHospitalCountData(workSheet, startingRow, data)
   data.forEach((info, index) => {
     const rowIncrementer = index + 1;
     const currentRow = startingRow + rowIncrementer;
+
+    workSheet.cell(currentRow, 1).string(info.municipalityKey);
+    workSheet.cell(currentRow, 1).string(info.municipalityName);
+    workSheet.cell(currentRow, 1).string(info.total);
   });
 }
 

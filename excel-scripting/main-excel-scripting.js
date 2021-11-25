@@ -45,8 +45,6 @@ function createHospitalsDataTableWithTotalDoctorsCount(workSheet, data) {
 
   const columnNames = extractColumnNames(hospitalsData[0].dataSet.data);
 
-  console.log(hospitalsData[0].dataSet.data)
-  console.log(columnNames)
   // createColumnHeaders(workSheet, columnNames, startingRowForDataInput);
 }
 
