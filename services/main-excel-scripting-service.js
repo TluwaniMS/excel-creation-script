@@ -113,6 +113,9 @@ function insertMunicipalitiesWithHospitalsLinkedToDoctorsCountData(workSheet, st
     const rowIncrementer = index + 1;
     const currentRow = startingRow + rowIncrementer;
 
+    workSheet.cell(currentRow, 1).string(info.municipalityKey);
+    workSheet.cell(currentRow, 1).string(info.municipalityName);
+    workSheet.cell(currentRow, 1).string(info.totalDoctors);
   });
 }
 
