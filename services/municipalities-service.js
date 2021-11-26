@@ -36,19 +36,18 @@ function getTotalDoctorsCountInMunicipalitiesGroupedByHospitals() {
     data: []
   };
 
-  hospitals.forEach((hospital) => {
-    const municipalityLinkedToHospital = municipalities.filter(
-      (municipality) => municipality.municipalityKey === hospital.municipality
+  municipalities.forEach((municipality) => {
+    const hospitalsLinkedToMunicipality = hospitals.filter(
+      (hospital) => hospital.municipality === municipality.municipalityKey
     );
-    const municipalityName = municipalityLinkedToHospital[0].municipalityName;
+    const hospitalKeys = hospitalsLinkedToMunicipality.map((hospital) => hospital.hospitalKey);
+    const doctorsLinkedToMunicipality = doctors.filter((doctor) => hospitalKeys.includes(doctor.hospital));
 
-    const doctorsLinkedToHospital = doctors.filter((doctor) => doctor.hospital === hospital.hospitalKey);
-    const totalDoctors = doctorsLinkedToHospital.length;
+    const totalDoctors = doctorsLinkedToMunicipality.length;
 
-    hospital.municipality = municipalityName;
-    hospital.totalDe = totalDoctors;
+    municipality.totalDoctors = totalDoctors;
 
-    formattedMunicipalitiesWithDoctorsCountGroupedByHospitals.data.push(hospital);
+    formattedMunicipalitiesWithDoctorsCountGroupedByHospitals.data.push(municipality);
   });
 
   return formattedMunicipalitiesWithDoctorsCountGroupedByHospitals;
