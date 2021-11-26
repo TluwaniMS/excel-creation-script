@@ -1,4 +1,4 @@
-const Specialisations = [
+const Specialisations = () => [
   { specialisationKey: "PDTN", specialisationName: "Pediatrician" },
   { specialisationKey: "DMTG", specialisationName: "Dematologist" },
   { specialisationKey: "CDGT", specialisationName: "Cardiologist" },

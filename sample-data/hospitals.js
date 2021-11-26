@@ -1,4 +1,4 @@
-const Hospitals = [
+const Hospitals = () => [
   {
     hospitalKey: "SKKN",
     hospitalName: "Sekhukhune Private Hospital",

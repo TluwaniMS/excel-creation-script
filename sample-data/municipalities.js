@@ -1,4 +1,4 @@
-const Municipalities = [
+const Municipalities = () => [
   { municipalityKey: "BLBG", municipalityName: "Blouberg Municipality" },
   { municipalityKey: "CPRN", municipalityName: "Capricorn Municipality" },
   { municipalityKey: "EKRN", municipalityName: "Ekhuruleni Municipality" },
