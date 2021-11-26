@@ -68,6 +68,7 @@ function createColumnHeaders(workSheet, columnNames, startingRow) {
   columnNames.forEach((name, index) => {
     const column = index + 1;
     workSheet.cell(startingRow, column).string(name);
+    workSheet.column(column).setWidth(40);
   });
 }
 
@@ -114,8 +115,8 @@ function insertMunicipalitiesWithHospitalsLinkedToDoctorsCountData(workSheet, st
     const currentRow = startingRow + rowIncrementer;
 
     workSheet.cell(currentRow, 1).string(info.municipalityKey);
-    workSheet.cell(currentRow, 1).string(info.municipalityName);
-    workSheet.cell(currentRow, 1).number(info.totalDoctors);
+    workSheet.cell(currentRow, 2).string(info.municipalityName);
+    workSheet.cell(currentRow, 3).number(info.totalDoctors);
   });
 }
 
