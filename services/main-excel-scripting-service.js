@@ -104,7 +104,7 @@ function insertMunicipalitiesWithHospitalCountData(workSheet, startingRow, data)
 
     workSheet.cell(currentRow, 1).string(info.municipalityKey);
     workSheet.cell(currentRow, 2).string(info.municipalityName);
-    workSheet.cell(currentRow, 3).string(info.total);
+    workSheet.cell(currentRow, 3).number(info.total);
   });
 }
 
@@ -115,7 +115,7 @@ function insertMunicipalitiesWithHospitalsLinkedToDoctorsCountData(workSheet, st
 
     workSheet.cell(currentRow, 1).string(info.municipalityKey);
     workSheet.cell(currentRow, 1).string(info.municipalityName);
-    workSheet.cell(currentRow, 1).string(info.totalDoctors);
+    workSheet.cell(currentRow, 1).number(info.totalDoctors);
   });
 }
 
@@ -126,7 +126,7 @@ function insertSpecialisationsCountData(workSheet, startingRow, data) {
 
     workSheet.cell(currentRow, 1).string(info.specialisationKey);
     workSheet.cell(currentRow, 2).string(info.specialisationName);
-    workSheet.cell(currentRow, 3).string(info.total);
+    workSheet.cell(currentRow, 3).number(info.total);
   });
 }
 
