@@ -2,10 +2,7 @@ const DataTitles = require("./data-titles");
 
 module.exports = {
   SecondDataInputPreceedingTitles: [DataTitles.Doctors],
-  ThirdDataInputPreceedingTitles: [
-    DataTitles.Doctors,
-    DataTitles.DoctorsCountInHospitals
-  ],
+  ThirdDataInputPreceedingTitles: [DataTitles.Doctors, DataTitles.DoctorsCountInHospitals],
   FourthDataInputPreceedingTitles: [
     DataTitles.Doctors,
     DataTitles.DoctorsCountInHospitals,
