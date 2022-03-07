@@ -1,0 +1,23 @@
+{
+  "name": "excel-creation-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TluwaniMS/excel-creation-script.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TluwaniMS/excel-creation-script/issues"
+  },
+  "homepage": "https://github.com/TluwaniMS/excel-creation-script#readme",
+  "dependencies": {
+    "excel4node": "^1.7.2"
+  }
+}
