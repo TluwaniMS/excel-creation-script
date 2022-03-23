@@ -10,7 +10,11 @@ This is a basic node-js project that I created to learn how to create excel shee
 
 * Step 1:
 
-Switch to the projects root directory and run "npm install" to install the rquired packages.
+Switch to the projects root directory and run `npm install` to install the rquired packages.
+
+* Step 2:
+
+Run `npm run dev` for a dev server.
 
 # Dependencies:
 * EXCEL4NODE
